@@ -10,7 +10,9 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.lab6msec.data.HRep
 import com.example.lab6msec.ui.theme.Lab6MSecTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,7 +20,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
+            val context = LocalContext.current
+            val hrep = HRep(context)
             Lab6MSecTheme {
+                //var en:Energy = Energy.kilocalories(12.0)
+                //en.inKilojoules
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
