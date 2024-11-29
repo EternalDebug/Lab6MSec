@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Lab6MSec</string>
+    <string name="back">Back</string>
+    <string name="perm">Требуются разрешения:</string>
+    <string name="not_all_perms">Получены не все разрешения!</string>
+    <string name="enterccal">Введите сожженые ccal</string>
 </resources>

@@ -29,7 +29,7 @@ fun CaloriesCompose(
     Row(
         verticalAlignment = Alignment.CenterVertically
     ){
-        Text("Килокалорий " + SimpleDateFormat("MM/dd/yyyy").format(Date(record.startTime.epochSecond * 1000))  + ": " + record.energy.inKilocalories.toString() + "  ", fontSize = 23.sp)
+        Text("Ccal " + SimpleDateFormat("MM/dd/yyyy").format(Date(record.startTime.epochSecond * 1000))  + ": " + record.energy.inKilocalories.toString() + "  ", fontSize = 23.sp)
         Button(onClick = {
             coroutineScope.launch{
                 repo.deleteCalories(record)
@@ -38,7 +38,7 @@ fun CaloriesCompose(
         },
             modifier = modifier,
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xff3e4db2)
+                containerColor = Color(0xffe53939)
             )
         ){
             Text("DEL", fontSize = 23.sp)

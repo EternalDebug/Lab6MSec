@@ -72,6 +72,21 @@ class HRep(context: Context) {
         }
     }
 
+    suspend fun aggregateCalories2(
+        start: Long,
+        final: Long
+    ): Energy {
+        var lst = readCaloriesByTimeRange(start,final)
+        var subres = 0.0
+
+        for (elem in lst){
+            subres += elem.energy.inKilocalories
+        }
+        val res = Energy.kilocalories(subres)
+        return res
+    }
+
+
     suspend fun deleteCalories(record: TotalCaloriesBurnedRecord) {
         try {
             healthConnectClient.deleteRecords(

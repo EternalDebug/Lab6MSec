@@ -30,17 +30,17 @@ fun DatePick(
         time.value = dateState.selectedDateMillis!! / 1000
     }
     Text(
-        text = "" + SimpleDateFormat("MM/dd/yyyy").format(Date(time.value * 1000)),
+        text = "" + SimpleDateFormat("MM/dd/yyyy").format(Date(time.value * 1000) ) + "   ",
         fontSize = 23.sp
     )
     Button(onClick = {
         dateDialogController.value = true
     },
         colors = ButtonDefaults.buttonColors(
-            containerColor = Color(0xffffffff)
+            containerColor = Color(0xff5d00ff)
         )
     ){
-        Text(text = " \uD83D\uDCDD", fontSize = 25.sp)
+        Text(text = " Date", fontSize = 25.sp)
     }
     if (dateDialogController.value) {
         DatePickerDialog(
